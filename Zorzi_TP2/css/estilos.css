@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400..700&family=Poppins:wght@100;400;600;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    font-weight: 100;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+
+}
+
+h1 {
+
+    font-size: 40px;
+    margin-top: 0;
+
+}
+
+h1,
+nav a {
+    line-height: 125%;
+    vertical-align: top;
+}
+
+header,
+nav, main {
+    width: 100vw;
+    padding: 0 8.33vw;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-around ;
+    height: 100vh;
+}
+
+main div {
+    width: 45.83%;
+}
+
+div img, video {
+    width: 100%;
+}
+
+/* caracteristicas del nav */
+nav h1 {
+
+    font-weight: 100;
+}
+
+
+nav {
+    background-color: #1e3765 ;
+    height: 19vh;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+
+
+}
+nav a {
+
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 20px;
+
+
+}
+
+nav div {
+    display: flex;
+    width: 24.11%;
+    justify-content: space-between;
+
+}
+
+/* de aca para abajo son caracteristicas solo del header */
+header {
+    
+    height: 45.30vh;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+header h1 {
+
+    font-weight: 800;
+    font-family:  'Poppins', sans-serif;
+
+}
+
+header h3 {
+    color: #1e3765;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+header p {
+    font-weight: 400;
+    font-family: 'Lora', serif;
+}
+
+header a,
+nav a {
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* para esconder el span en pantalla grande */
+nav span { display: none;}
+
+.icon-menu {
+    
+    font-size: 8vw ;
+}
+
+/*lo que se muestra cuando clickeas en el menu*/
+.mostrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    left: 0;
+    top: 19vh;
+    background-color: #c4dafa ;
+    width: 100vw;
+    padding: 5vw;
+    min-height: 20vh;
+
+}
+
+footer {
+    background-color:#1e3765;
+    height: 125px;
+    width: 100vw;
+}
+
+/*galeria de imagenes */
+.lightboxOverlay {
+    background-color: #1e3765;
+}
+
+@media(max-width:1024px){
+    section { 
+        height: auto;
+    }
+    nav div {
+        
+        width: 45%;
+    
+    }
+    header {
+        margin-bottom: 20px;
+        height: auto;
+    }
+
+
+}
+
+ /*para pantallas más chicas*/
+@media (max-width:768px) {
+
+  /*para ocultar el grupo de links ya que va a aparecer el span*/
+    nav div {
+        display: none;
+    }
+
+    /*vuelvo a mostrar el span*/
+    nav span { display: inline;}
+
+    section div {
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+    
+
+}
+
+img, nav span {
+    transition-property: transform ;
+    transition-duration: 1500ms;
+    filter: drop-shadow(0,0,0,transparent);
+}
+
+
+img:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(1px 2px 5px rgba(0,0,0,0.8));
+
+}
+
+nav span:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.2));
+
+}
+
+
+nav div :hover {
+    color: black;
+}
+
+
+.brillar {
+    animation: brillitosAnimacion 2s ease-in-out infinite;
+  }
+  
+  @keyframes brillitosAnimacion {
+    0% {
+      color:#c4dafa;
+    }
+    50% {
+      color:#1e3765;
+    }
+    100% {
+      color:#c4dafa;
+}
+}
+
+header a {
+
+    background-color: #1e3765;
+    animation-name: AnimacionUno, AnimacionUnoTexto;
+    animation-duration: 2s;
+    animation-delay: 2;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes AnimacionUno {
+    from {background-color: #c4dafa; }
+
+    to {background-color:#1e3765;}
+}
+
+@keyframes AnimacionUnoTexto {
+    from {color: #1e3765;}
+
+    to {color: aliceblue; }
+}
